@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href="../CSS/Index_stylesheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <title>HochschuleApp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div data-role="page" id="mainPage">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col"></div>
+                <div class="col">
+                    <img src="../Images/Logo_der_Hochschule_Worms.png" height="125" class="center" id="logoImage" />
+                </div>
+                <div class="col"></div>
+            </div>
+            <hr class="style1">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <button id="mensaButton" style="height: 100px" type="button" class="btn btn-primary btn-block btnBorder">Mensa</button>
+                    </div>
+                    <div class="col">
+                        <button id="weatherButton" style="height: 100px" type="button" class="btn btn-primary btn-block btnBorder">Wetter</button>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col">
+                        <button id="lsfSelectorButton" style="height: 100px" type="button" class="btn btn-primary btn-block btnBorder">Kurse</button>
+                    </div>
+                    <div class="col">
+                        <button id="planButton" style="height: 100px" type="button" class="btn btn-primary btn-block btnBorder">Lageplan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="panel" id="mainPanel" data-display="overlay" data-position="left">
+            <center>
+                <label for="name" id="essenTitle0">Essenplans</label>
+            </center>
+            <a id="thisWeekButton" data-role="button" data-mini="true" data-icon="info" data-iconpos="right">Diese Woche</a>
+            <a id="nextWeekButton" data-role="button" data-mini="true" data-icon="info" data-iconpos="right">Nächste Woche</a>
+            <a id="afterNextWeekButton" data-role="button" data-mini="true" data-icon="info" data-iconpos="right">Übernächste Woche</a>
+            <center>
+                <label for="name">System</label>
+            </center>
+            <a id="aboutButton" data-role="button" data-mini="true" data-icon="info" data-iconpos="right">About</a>
+        </div>
+
+        <p id="noti">Ausfallende Veranstaltungen</p>
+
+        <div id="notificationView"></div>
+  
+        <table id="dataTable" class="table"></table>
+
+        <div id="noFailEvents" style="display:none;"><center><p>Keine aktuell ausfallenden Veranstaltungen</p></center></div>
+
+    </div>
+
+    <script type="text/javascript" src="scripts/main/index.js"></script>
+
+    <script src="scripts/core/jquery-1.8.0.min.js"></script>
+    <script src="scripts/core/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/core/platformOverrides.js"></script>
+
+    <script src="scripts/main/lsf_failout_noti.js"></script>
+
+
+    <script src="scripts/core/jquery.dataTables.min.js"></script>
+
+    <link href="../Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap/bootstrap.min.js"></script>
+    <script src="../Bootstrap/popper.min.js"></script>
+
+</body>
+    </html>

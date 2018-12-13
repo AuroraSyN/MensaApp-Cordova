@@ -1,0 +1,13 @@
+﻿#weather {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#backbtn {
+    display: inline-block;
+}
+
+.headerBackBtn {
+    background-color: #f5f5f5;
+}
+

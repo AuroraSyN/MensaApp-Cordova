@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="../CSS/map_stylesheet.css" rel="stylesheet" />
+    <title>Hochschule Worms Lageplan</title>
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container headerBackBtn">
+        <div id="backbtn">
+            <a href="index.html" data-icon="arrow-l" rel="external">
+                <img src="Images/icons8-links-filled-50.png" width="35" height="35" data-inline="true" />
+            </a>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var worms = { lat: 49.632830, lng: 8.343831 };
+            var image = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: worms
+            });
+
+            // Markers
+            var building_A = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.632830, lng: 8.343831 },
+                map: map,
+                label: { text: "Gebäude A", color: "red" },
+                title: 'Gebäude A',
+                icon: image
+            });
+
+            var building_B = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.6329066, lng: 8.3432196 },
+                map: map,
+                label: { text: "Gebäude B", color: "red" },
+                title: 'Gebäude B',
+                icon: image
+            });
+
+            var building_C = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.6332815, lng: 8.3435178 },
+                map: map,
+                label: { text: "Gebäude C", color: "blue" },
+                title: 'Gebäude C',
+                icon: image
+            });
+
+            var building_D = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.6334043, lng: 8.3434438 },
+                map: map,
+                label: { text: "Gebäude D", color: "green" },
+                title: 'Gebäude D',
+                icon: image
+            });
+
+            var building_G = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.633566, lng: 8.344137 },
+                map: map,
+                label: { text: "Gebäude G", color: "red" },
+                title: 'Gebäude G',
+                icon: image
+            });
+
+            var building_H = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.632354, lng: 8.344512 },
+                map: map,
+                label: { text: "Gebäude H", color: "yellow" },
+                title: 'Gebäude H',
+                icon: image
+            });
+
+            var building_K = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.633204, lng: 8.344708 },
+                map: map,
+                label: { text: "Gebäude K", color: "red" },
+                title: 'Gebäude K',
+                icon: image
+            });
+
+
+            var building_M = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.634682, lng: 8.344367 },
+                map: map,
+                label: { text: "Gebäude M", color: "red" },
+                title: 'Gebäude M',
+                icon: image
+            });
+
+            var building_L = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.634563, lng: 8.344905 },
+                map: map,
+                label: { text: "Gebäude L", color: "red" },
+                title: 'Gebäude L',
+                icon: image
+            });
+
+            var building_N = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.634843, lng: 8.345090 },
+                map: map,
+                label: { text: "Gebäude N", color: "red" },
+                title: 'Gebäude N',
+                icon: image
+            });
+
+            var building_O = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.634640, lng: 8.345685 },
+                map: map,
+                label: { text: "Gebäude O", color: "red" },
+                title: 'Gebäude O',
+                icon: image
+            });
+
+            var building_Parking = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.634600, lng: 8.346221 },
+                map: map,
+                label: { text: "Parking", color: "blue" },
+                title: 'Parking',
+                icon: image
+            });
+
+            var building_Kita = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.634248, lng: 8.344199 },
+                map: map,
+                label: { text: "Kita", color: "yellow" },
+                title: 'Kita',
+                icon: image
+            });
+
+            var building_Mensa = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: { lat: 49.6335126, lng: 8.3439451 },
+                map: map,
+                label: { text: "Mensa", color: "blue" },
+                title: 'Mensa',
+                icon: image
+            });
+
+            var infoWindow = new google.maps.InfoWindow;
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Du bist hier!');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                }, function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+    </script>
+    <!--API-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3Xw2o05mjb3Dc1X5oeB7AxfluiuedgQw&callback=initMap">
+    </script>
+</body>
+
+</html>
